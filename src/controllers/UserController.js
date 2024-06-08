@@ -44,7 +44,7 @@ const createUser = async (req, res) => {
             token: crypto.randomBytes(32).toString("hex")
 
         })
-        const url = `http://localhost:3000/verify/${emailhex}/${passwordhex}/${token.token}`;
+        const url = `https://fe-bice-ten.vercel.app/verify/${emailhex}/${passwordhex}/${token.token}`;
         await Verify(email, "xác thực !!!", url);
         // const response = await UserService.createUser(req.body)
         return res.status(200).json("đã gửi")
